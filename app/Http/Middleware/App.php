@@ -1,29 +1,26 @@
-<?php
-
-namespace App\Http\Middleware;
+<?php namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
-use App\Events\UserAccess;
 
-class App
-{
+class App {
+
     /**
      * Handle an incoming request.
      *
-     * @param  Illuminate\Http\Request  $request
-     * @param  Closure  $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-      if(!\Session::has('locale'))
-  {
-     \Session::put('locale', \Config::get('app.locale'));
-  }
+        if(!\Session::has('locale'))
+        {
+           \Session::put('locale', \Config::get('app.locale'));
+        }
 
-  app()->setLocale(\Session::get('locale'));
+        app()->setLocale(\Session::get('locale'));
 
-  return $next($request);
+        return $next($request);
     }
+
 }

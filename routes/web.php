@@ -15,8 +15,19 @@
 Route::get('/', 'Front\HomeController@index');
 
 // Language
-// Route::get('language/{lang}', 'Front\HomeController@language')->where('lang', implode('|', config('app.languages')));
+Route::get('language/{lang}', 'Front\HomeController@language')->where('lang', implode('|', config('app.languages')));
 
 Auth::routes();
 
+Route::post('/login', array(
+  'uses'    => 'Front\HomeController@doLogin'
+));
+
 Route::get('/home', 'HomeController@index');
+
+Route::get('/got', [
+  'middleware'  => ['auth'],
+  'uses' => function() {
+    echo "You allowed";
+  }
+]);
