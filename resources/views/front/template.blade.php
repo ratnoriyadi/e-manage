@@ -56,6 +56,9 @@
               <li><a href="{!! url('/login') !!}">Sign In</a></li>
               <li><a href="{!! url('/register') !!}">Sign Up</a></li>
             @endif
+            @if(Auth::check())
+              <li><a href="{!! url('/logout') !!}">Sign Out</a></li>
+            @endif
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('front/site.langname') }} <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -72,7 +75,7 @@
     <!-- END OF SECTION MAIN -->
     <footer style="width:100%;bottom:0;padding:10px 0px 10px 0px;position:fixed;border-top:solid 1px #ccc;">
       <center>
-        Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using Laravel 5.3 from South Jakarta, Indonesia
+        Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using Laravel 5.3 in South Jakarta, Indonesia
       </center>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

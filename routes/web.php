@@ -20,8 +20,14 @@ Route::get('language/{lang}', 'Front\HomeController@language')->where('lang', im
 Auth::routes();
 
 Route::post('/login', array(
-  'uses'    => 'Front\HomeController@doLogin'
+  'uses'  => 'Front\HomeController@doLogin'
 ));
+
+Route::post('/register', array(
+  'uses'  => 'Auth\RegisterController@create'
+));
+
+Route::get('/logout', array('uses' => 'Front\HomeController@doLogout'));
 
 Route::get('/home', 'HomeController@index');
 

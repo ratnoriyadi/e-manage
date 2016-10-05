@@ -47,10 +47,15 @@ class HomeController extends Controller
         );
 
         if (Auth::attempt($userdata)) {
-          echo "SUCCESS!";
+          return Redirect::to('/');
         } else {
-          return Redirect::to('login');
+          return Redirect::to('/login');
         }
       }
+    }
+
+    public function doLogout() {
+      Auth::logout();
+      return Redirect::to('/login');
     }
 }
