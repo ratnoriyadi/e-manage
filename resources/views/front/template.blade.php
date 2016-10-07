@@ -6,6 +6,16 @@
     <!-- CSS -->
       <link rel="stylesheet" href="{{ asset('/bootstrap/dist/theme/paper/bootstrap.min.css') }}" media="screen" title="no title" charset="utf-8">
       <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
+      <style media="screen">
+      @keyframes blink {
+      to { color: red; }
+      }
+
+      .my-element {
+      color: blue;
+      animation: blink 0.4ms steps(2, start) infinite;
+      }
+      </style>
       <!-- START OF SECTION CUSTOM CSS -->
         @yield('custom_style')
       <!-- END OF SECTION CUSTOM CSS -->
@@ -57,7 +67,12 @@
               <li><a href="{!! url('/register') !!}">Sign Up</a></li>
             @endif
             @if(Auth::check())
-              <li><a href="{!! url('/logout') !!}">Sign Out</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, {{ Auth::user()->name }} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{!! url('/logout') !!}">Sign Out</a></li>
+              </ul>
+            </li>
             @endif
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('front/site.langname') }} <span class="caret"></span></a>
@@ -75,7 +90,7 @@
     <!-- END OF SECTION MAIN -->
     <footer style="width:100%;bottom:0;padding:10px 0px 10px 0px;position:fixed;border-top:solid 1px #ccc;">
       <center>
-        Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using Laravel 5.3 in South Jakarta, Indonesia
+        Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using <span class="my_element">Laravel 5.3</span> in South Jakarta, Indonesia
       </center>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
