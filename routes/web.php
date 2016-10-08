@@ -33,7 +33,17 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/got', [
   'middleware'  => ['auth'],
-  'uses' => function() {
+  'uses'        => function() {
     echo "You allowed";
   }
 ]);
+
+// Items
+Route::get('/items/in-warehouse', array(
+  'middleware'  => ['auth'],
+  'uses'        =>  'ItemController@in_warehouse'
+));
+Route::get('/items/in-warehouse/add', array(
+  'middleware'  => ['auth'],
+  'uses'        => 'ItemController@in_warehouse_add'
+));

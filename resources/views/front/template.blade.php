@@ -38,28 +38,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="color:#f4645f">Learn 5.3</a>
+          <a class="navbar-brand" href="{!! url('/') !!}" style="color:#2196f3">E-Manage</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">{{ trans('front/site.home') }} <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="{!! url('/') !!}">{{ trans('front/site.home') }} <span class="sr-only">(current)</span></a></li>
             @if(Auth::check())
-              <li><a href="#">Forum</a></li>
-            @endif
+              <!-- <li><a href="#"></a></li> -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sample Dropdown Menu <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Items <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="{!! url('/items/in-warehouse') !!}">In Warehouse Items</a></li>
+                <li><a href="#">In Delivery Items</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="#">Item In</a></li>
+                <li><a href="#">Item Out</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="#">Sold Items</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">All Items</a></li>
               </ul>
             </li>
+            <li><a href="#">Calendar</a></li>
+            @endif
           </ul>
           <ul class="nav navbar-nav navbar-right">
             @if(Auth::guest())
@@ -70,6 +73,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, {{ Auth::user()->name }} <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a href="{!! url('/settings') !!}">Settings</a></li>
                 <li><a href="{!! url('/logout') !!}">Sign Out</a></li>
               </ul>
             </li>
