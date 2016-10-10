@@ -3,7 +3,7 @@
 class LanguageTest extends TestCase
 {
     /**
-     * Test change language
+     * Test change language.
      *
      * @return void
      */
