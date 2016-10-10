@@ -19,31 +19,31 @@ Route::get('language/{lang}', 'Front\HomeController@language')->where('lang', im
 
 Auth::routes();
 
-Route::post('/login', array(
-  'uses'  => 'Front\HomeController@doLogin'
-));
+Route::post('/login', [
+  'uses'  => 'Front\HomeController@doLogin',
+]);
 
-Route::post('/register', array(
-  'uses'  => 'Auth\RegisterController@create'
-));
+Route::post('/register', [
+  'uses'  => 'Auth\RegisterController@create',
+]);
 
-Route::get('/logout', array('uses' => 'Front\HomeController@doLogout'));
+Route::get('/logout', ['uses' => 'Front\HomeController@doLogout']);
 
 Route::get('/home', 'HomeController@index');
 
 Route::get('/got', [
   'middleware'  => ['auth'],
-  'uses'        => function() {
-    echo "You allowed";
-  }
+  'uses'        => function () {
+      echo 'You allowed';
+  },
 ]);
 
 // Items
-Route::get('/items/in-warehouse', array(
+Route::get('/items/in-warehouse', [
   'middleware'  => ['auth'],
-  'uses'        =>  'ItemController@in_warehouse'
-));
-Route::get('/items/in-warehouse/add', array(
+  'uses'        => 'ItemController@in_warehouse',
+]);
+Route::get('/items/in-warehouse/add', [
   'middleware'  => ['auth'],
-  'uses'        => 'ItemController@in_warehouse_add'
-));
+  'uses'        => 'ItemController@in_warehouse_add',
+]);

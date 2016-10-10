@@ -2,5 +2,5 @@
 
 return [
   'langname' => 'Bahasa',
-  'home' => 'Beranda',
+  'home'     => 'Beranda',
 ];

@@ -1,26 +1,27 @@
-<?php namespace App\Http\Middleware;
+<?php
+
+namespace App\Http\Middleware;
 
 use Closure;
 
-class App {
-
+class App
+{
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if(!\Session::has('locale'))
-        {
-           \Session::put('locale', \Config::get('app.locale'));
+        if (!\Session::has('locale')) {
+            \Session::put('locale', \Config::get('app.locale'));
         }
 
         app()->setLocale(\Session::get('locale'));
 
         return $next($request);
     }
-
 }
