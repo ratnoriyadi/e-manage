@@ -106,7 +106,7 @@
               @else
                 {{ $items->item_name }}
               @endif
-            </a> from <a href="{{ url('/supplier/'.strtolower($items->item_supplier)) }}">{{ $items->item_supplier }}</a> out from warehouse managed by <a href="{{ url('/staff/'.strtolower($items->by_staff)) }}">{{ $items->by_staff }}</a> at {{ date('D, M d <sup>S</sup>,Y', strtotime($items->added_at)) }}.</div>
+            </a> from <a href="{{ url('/supplier/'.strtolower($items->item_supplier)) }}">{{ $items->item_supplier }}</a> {{ $items->identity_id == 1 ? 'in' : 'out' }} from warehouse managed by <a href="{{ url('/staff/'.strtolower($items->by_staff)) }}">{{ $items->by_staff }}</a> at <?php echo date('D, M d <\s\u\p\>S</\s\u\p> Y', strtotime($items->added_at)) ?>.</div>
           </li>
           @endforeach
         </ul>

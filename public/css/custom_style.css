@@ -1,11 +1,24 @@
-html {
+html, body {
 	background-color: #333333;
+	position: relative;
+	min-height: 100%;
 }
 
+body {position: relative;}
 div h6 {color:#2196f3;text-align: center;}
 
 footer {
 	background-color: #ffffff;
+	clear: both;
+	width:100%;
+	right: 0;
+	bottom:0px;
+	position:relative;
+	padding:10px 0px 10px 0px;
+	height: auto;
+	border-top:solid 1px #ccc;
+	display: flex;
+	flex-direction: column;
 }
 
 footer a {
@@ -29,8 +42,25 @@ ul li, ul, li {
 	list-style: none;
 }
 
-.avatar {border-radius: 50%;width: 20px;padding: 0;margin: 0}
+#wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+}
 
+.avatar {border-radius: 50%;width: 20px;padding: 0;margin: 0}
+.norder-layour {
+	position: fixed;
+	backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	content: " ";
+	z-index: 0;
+}
+
+#recent a:hover {text-decoration: none;font-weight: bold;transition:ease-out 0.1s;}
 #recent li {width: 100%;border: solid 1px #ccc;padding: 10px;background-color: #fdfdfd;box-shadow: 0px 2px 6px #ccc;margin: 5px 0px 5px 0px;}
 #recent li:hover {box-shadow: 0px 2px 30px #333333;transition: ease-out 0.3s;z-index:999;position: relative;}
 #recent .in {border-bottom: solid 5px #2196f3;}

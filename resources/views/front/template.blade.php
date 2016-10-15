@@ -30,8 +30,9 @@
       <!-- END OF SECTION CUSTOM JAVASCRIPT -->
     <!-- END OF JAVASCRIPT -->
   </head>
-  <body>
-    <nav class="navbar navbar-default">
+  <body class="nordev-layout">
+    <div id="wrapper">
+      <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -96,22 +97,26 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- START OF SECTION MAIN -->
-      @yield('main')
+      <div id="wrapper">
+        @yield('main')
+      </div>
     <!-- END OF SECTION MAIN -->
-    <footer style="width:100%;bottom:0;padding:10px 0px 10px 0px;position:relative;border-top:solid 1px #ccc;">
+    <footer>
       <div>
         <center>
           <a href="">Contribute</a>
-          <a href="">Copyright (DMCA)</a>
+          <a href="">Copyright <!--(DMCA)--></a>
           <a href="https://github.com/noric1902">@noric1902</a>
         </center>
       </div>
       <div>
         <center>
-          Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using <span class="my_element">Laravel 5.3</span> in South Jakarta, Indonesia
+          <!-- Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using <span class="my_element">Laravel 5.3</span> in South Jakarta, Indonesia -->
+          2016
         </center>
       </div>
     </footer>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- START OF SECTION CUSTOM JAVASCRIPT -->
