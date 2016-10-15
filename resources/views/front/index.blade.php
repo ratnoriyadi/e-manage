@@ -84,8 +84,9 @@
       <div id="recent">
         <h6>Recent Item</h6>
         <hr>
+        <div>filter section</div>
         <ul>
-          <li class="in">
+          <!-- <li class="in">
             <label><a href="">Item Name</a></label>
             <span>2 hours ago</span>
             <div class="info">2 unit <a href="">items</a> from <a href="">supplier</a> in to warehouse managed by <a href="">staff_name</a> at Sat, Oct 15 2016.</div>
@@ -94,7 +95,20 @@
             <label><a href="">Item Name</a></label>
             <span>2 hours ago</span>
             <div class="info">2 unit <a href="">items</a> from <a href="">supplier</a> out from warehouse managed by <a href="">staff_name</a> at Sat, Oct 15 2016.</div>
+          </li> -->
+          @foreach($recent_items as $items)
+          <li class="{{ $items->identity_id == 1 ? 'in' : 'out' }}" onclick="location.href='{{ url("/recent/".md5($items->id_item)) }}'" style="cursor:pointer">
+            <label><a href="">{{ $items->item_name }}</a></label>
+            <span>2 hours ago</span>
+            <div class="info">2 unit <a href="{{ url('/item/'.strtolower($items->item_name)) }}">
+              @if( $items->item_quantity > 1)
+                {{ $items->item_name }}s
+              @else
+                {{ $items->item_name }}
+              @endif
+            </a> from <a href="{{ url('/supplier/'.strtolower($items->item_supplier)) }}">{{ $items->item_supplier }}</a> out from warehouse managed by <a href="{{ url('/staff/'.strtolower($items->by_staff)) }}">{{ $items->by_staff }}</a> at {{ date('D, M d <sup>S</sup>,Y', strtotime($items->added_at)) }}.</div>
           </li>
+          @endforeach
         </ul>
         <center><a href="" class="show_more">show more</a></center>
       </div>

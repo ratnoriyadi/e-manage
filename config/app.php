@@ -165,6 +165,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // Extra Package
+        Collective\Html\HtmlServiceProvider::class,
+
+
         /*
          * Package Service Providers...
          */
@@ -228,6 +232,9 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
         'Input'        => Illuminate\Support\Facades\Input::class,
+
+        // Custom Package
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

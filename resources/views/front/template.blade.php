@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="{{ asset('/bootstrap/dist/theme/paper/bootstrap.min.css') }}" media="screen" title="no title" charset="utf-8">
       <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
       <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
       <style media="screen">
       @keyframes blink {
       to { color: red; }

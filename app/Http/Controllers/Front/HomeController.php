@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Redirect;
 use Session;
+use DB;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,13 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('front.index');
+        $sold_item                  = DB::table('sold_item');
+        $item_in_warehouse          = DB::table('item_in_warehouse');
+        $data['recent_items']       = $item_in_warehouse->union($sold_item)
+                                    -> orderBy('added_at', 'asc')
+                                    -> get();
+        
+        return view('front.index', $data);
     }
 
     public function language($lang)
