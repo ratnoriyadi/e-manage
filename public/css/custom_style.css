@@ -2,6 +2,41 @@ html {
 	background-color: #333333;
 }
 
+div h6 {color:#2196f3;text-align: center;}
+
 footer {
 	background-color: #ffffff;
 }
+
+footer a {
+	padding: 5px;
+	font-size:12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: none;
+	color: #0064b4;
+}
+
+ul {
+	-webkit-padding-start: 0px;
+	padding-start: 0px;
+}
+
+ul li, ul, li {
+	list-style: none;
+}
+
+.avatar {border-radius: 50%;width: 20px;padding: 0;margin: 0}
+
+#recent li {width: 100%;border: solid 1px #ccc;padding: 10px;background-color: #fdfdfd;box-shadow: 0px 2px 6px #ccc;margin: 5px 0px 5px 0px;}
+#recent li:hover {box-shadow: 0px 2px 30px #333333;transition: ease-out 0.3s;z-index:999;position: relative;}
+#recent .in {border-bottom: solid 5px #2196f3;}
+#recent .out {border-bottom: solid 5px #ff4e4e;}
+#recent label {color: #2196f3;font-size: 18px;}
+#recent span {float: right;position: relative;}
+#recent .info {font-size: 12px;font-style: italic;}
+#recent .show_more {font-size: 12px;}
+#recent .show_more:hover {text-decoration: none;font-variant: inherit;}

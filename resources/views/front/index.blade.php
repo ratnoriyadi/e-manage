@@ -78,6 +78,28 @@
       <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto;"></div>
     </div>
     </div>
+
+    <div class="panel">
+    <div class="panel-body">
+      <div id="recent">
+        <h6>Recent Item</h6>
+        <hr>
+        <ul>
+          <li class="in">
+            <label><a href="">Item Name</a></label>
+            <span>2 hours ago</span>
+            <div class="info">2 unit <a href="">items</a> from <a href="">supplier</a> in to warehouse managed by <a href="">staff_name</a> at Sat, Oct 15 2016.</div>
+          </li>
+          <li class="out">
+            <label><a href="">Item Name</a></label>
+            <span>2 hours ago</span>
+            <div class="info">2 unit <a href="">items</a> from <a href="">supplier</a> out from warehouse managed by <a href="">staff_name</a> at Sat, Oct 15 2016.</div>
+          </li>
+        </ul>
+        <center><a href="" class="show_more">show more</a></center>
+      </div>
+    </div>
+    </div>
   </div>
 
 @stop

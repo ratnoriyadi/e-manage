@@ -73,7 +73,10 @@
             @endif
             @if(Auth::check())
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, {{ Auth::user()->name }} <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
+                <img class="avatar" src="https://avatars1.githubusercontent.com/u/7555972?v=3&s=466">&nbsp;
+                 {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu">
                 <li><a href="{!! url('/settings') !!}">Settings</a></li>
                 <li><a href="{!! url('/logout') !!}">Sign Out</a></li>
@@ -94,10 +97,19 @@
     <!-- START OF SECTION MAIN -->
       @yield('main')
     <!-- END OF SECTION MAIN -->
-    <footer style="width:100%;bottom:0;padding:10px 0px 10px 0px;position:fixed;border-top:solid 1px #ccc;">
-      <center>
-        Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using <span class="my_element">Laravel 5.3</span> in South Jakarta, Indonesia
-      </center>
+    <footer style="width:100%;bottom:0;padding:10px 0px 10px 0px;position:relative;border-top:solid 1px #ccc;">
+      <div>
+        <center>
+          <a href="">Contribute</a>
+          <a href="">Copyright (DMCA)</a>
+          <a href="https://github.com/noric1902">@noric1902</a>
+        </center>
+      </div>
+      <div>
+        <center>
+          Made with <i class="fa fa-headphones" aria-hidden="true"></i> &amp; <i class="fa fa-heart" aria-hidden="true"></i> using <span class="my_element">Laravel 5.3</span> in South Jakarta, Indonesia
+        </center>
+      </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
