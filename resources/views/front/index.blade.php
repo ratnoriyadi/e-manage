@@ -1,3 +1,8 @@
+<?php
+
+use App\Http\Controllers\Front\HomeController;
+
+?>
 @extends('front.template')
 @section('title')
   Home
@@ -99,7 +104,8 @@
           @foreach($recent_items as $items)
           <li class="{{ $items->identity_id == 1 ? 'in' : 'out' }}" onclick="location.href='{{ url("/recent/".md5($items->id_item)) }}'" style="cursor:pointer">
             <label><a href="">{{ $items->item_name }}</a></label>
-            <span>2 hours ago</span>
+            <span>{{ HomeController::time_elapsed_string($items->added_at, false) }}</span>
+            {{ $items->added_at }}
             <div class="info">2 unit <a href="{{ url('/item/'.strtolower($items->item_name)) }}">
               @if( $items->item_quantity > 1)
                 {{ $items->item_name }}s
