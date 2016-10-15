@@ -16,7 +16,6 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \App\Http\Middleware\App::class,
-        'App\Http\Middleware\App',
     ];
 
     /**
@@ -33,7 +32,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\App::class,
-            \App\Http\Middleware\Language::class,
+            // \App\Http\Middleware\Language::class,
         ],
 
         'api' => [
