@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>@yield('title') - nurodigital</title>
     <!-- CSS -->
+      <link rel="stylesheet" type="text/css" href="{{ asset('/css/custom_style.css') }}">
       <link rel="stylesheet" href="{{ asset('/bootstrap/dist/theme/paper/bootstrap.min.css') }}" media="screen" title="no title" charset="utf-8">
       <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
+      <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
       <style media="screen">
       @keyframes blink {
       to { color: red; }
@@ -38,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{!! url('/') !!}" style="color:#2196f3">E-Manage</a>
+          <a class="navbar-brand" href="{!! url('/') !!}" style="color:#2196f3;font-family:Waiting for The Sunrise"><b>e-manage</b></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
