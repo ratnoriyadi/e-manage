@@ -1,6 +1,6 @@
 @extends('front.template')
 @section('title')
-  Item in Warehouse
+  In Warehouse Items
 @stop
 @section('main')
   <div class="container">

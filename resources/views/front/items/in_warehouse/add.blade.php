@@ -1,6 +1,6 @@
 @extends('front.template')
 @section('title')
-  Item in Warehouse
+  Add Item to Warehouse
 @stop
 @section('main')
   <div class="container">
@@ -9,11 +9,56 @@
       In Warehouse Items / Add an Item
     </div>
     <div class="panel-body">
-        <form class="" action="{!! url('/items/in-warehouse/create') !! }" method="post">
-          <label for="item_name">
-            <input class="form-control" type="text" name="item_name" value="" placeholder="Item Name">
-          </label>
-          <input class="btn btn-primary btn-sm" type="button" name="name" value="SAVE">
+        <form class="form-horizontal" role="form" method="POST" action="{!! url('/items/in-warehouse/create') !! }">
+
+          <div class="form-group">
+            <label for="item_name" class="col-md-4 control-label">Item Name</label>
+              <div class="col-md-6">
+                  <input id="item_name" type="text" class="form-control" name="item_name" value="" required autofocus>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="item_quantity" class="col-md-4 control-label">Quantity</label>
+              <div class="col-md-6">
+                  <input id="item_quantity" type="text" class="form-control" name="item_quantity" value="" required autofocus>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="item_supplier" class="col-md-4 control-label">Item Supplier</label>
+              <div class="col-md-6">
+                  <select class="form-control" name="item_supplier" required>
+                    <option selected disabled>SELECT SUPPLIER</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                    <option>A</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="item_supplier" class="col-md-4 control-label">Added At</label>
+              <div class="col-md-6">
+                  <span>
+                    <label><input type="radio" name="choice_date"> Automatic</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="choice_date"> Manually</label>
+                  </span>
+
+                  <!-- <select class="form-control" name="item_supplier" required>
+                    <option selected disabled>SELECT SUPPLIER</option>
+                  </select> -->
+              </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+              <input class="btn btn-primary btn-sm" type="button" name="name" value="SAVE">
+              <a class="btn btn-default btn-sm" href="#">Add More</a>
+            </div>
+          </div>
         </form>
     </div>
     </div>

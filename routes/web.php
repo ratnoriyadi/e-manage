@@ -41,9 +41,9 @@ Route::get('/got', [
 // Items
 Route::get('/items/in-warehouse', [
   'middleware'  => ['auth'],
-  'uses'        => 'ItemController@in_warehouse',
+  'uses'        => 'Front\WarehouseItemsController@in_warehouse',
 ]);
 Route::get('/items/in-warehouse/add', [
   'middleware'  => ['auth'],
-  'uses'        => 'ItemController@in_warehouse_add',
+  'uses'        => 'Front\WarehouseItemsController@in_warehouse_add',
 ]);

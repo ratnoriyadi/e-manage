@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use DB;
 use App\Items\WarehouseItems;
 
-class ItemController extends Controller
+class WarehouseItemsController extends Controller
 {
     protected $session = 'warehouse_items';
 
